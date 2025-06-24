@@ -15,11 +15,10 @@ function App() {
 
   function createTodo() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
+  }
 
-      
   function deleteTodo(id: string) {
     client.models.Todo.delete({ id })
-  }
   }
 
   return (
@@ -38,7 +37,7 @@ function App() {
           Review next step of this tutorial.
         </a>
         <footer>
-          <p>© {new Date().getFullYear()} Deployed in AWS Amplify by <a href="https://jpdiaz.dev">Juan Diaz</a></p>
+          <p>© {new Date().getFullYear()} Deployed in AWS Amplify by <a href="https://jpdiaz.dev" target="_blank">Juan Diaz</a></p>
         </footer>
       </div>
     </main>
