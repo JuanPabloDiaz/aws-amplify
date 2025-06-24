@@ -59,6 +59,10 @@ li:hover {
   background: #dadbf9;
 }
 
+h1 {
+ align-self: center;
+}
+
 a {
   font-weight: 800;
   text-decoration: none;

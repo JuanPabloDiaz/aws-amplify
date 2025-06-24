@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
 const client = generateClient<Schema>();
 
 function App() {
+  const { signOut } = useAuthenticator();
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
   useEffect(() => {
@@ -40,6 +42,7 @@ function App() {
           <p>© {new Date().getFullYear()} Deployed in AWS Amplify by <a href="https://jpdiaz.dev" target="_blank">Juan Diaz</a></p>
         </footer>
       </div>
+      <button onClick={signOut}>Sign out</button>
     </main>
   );
 }
