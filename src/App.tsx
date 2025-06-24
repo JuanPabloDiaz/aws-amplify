@@ -15,15 +15,20 @@ function App() {
 
   function createTodo() {
     client.models.Todo.create({ content: window.prompt("Todo content") });
+
+      
+  function deleteTodo(id: string) {
+    client.models.Todo.delete({ id })
+  }
   }
 
   return (
     <main>
-      <h1>My todos</h1>
+      <h1>To Do</h1>
       <button onClick={createTodo}>+ new</button>
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>{todo.content}</li>
+          <li onClick={() => deleteTodo(todo.id)} key={todo.id}>{todo.content}</li>
         ))}
       </ul>
       <div>
@@ -32,6 +37,9 @@ function App() {
         <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
           Review next step of this tutorial.
         </a>
+        <footer>
+          <p>© {new Date().getFullYear()} Deployed in AWS Amplify by <a href="https://jpdiaz.dev">Juan Diaz</a></p>
+        </footer>
       </div>
     </main>
   );
