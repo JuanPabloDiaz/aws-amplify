@@ -42,7 +42,7 @@ function App() {
         Authentication step added but its commented out
         <br/>
         <footer>
-          <p>© {new Date().getFullYear()}  by <a href="https://jpdiaz.dev" target="_blank">Juan Diaz</a></p>
+          <p>© {new Date().getFullYear()} | <a href="https://github.com/JuanPabloDiaz/aws-amplify" target="_blank">GitHub</a> | <a href="https://jpdiaz.dev" target="_blank">Juan Diaz</a></p>
         </footer>
       </div>
       {/* <button onClick={signOut}>Sign out</button> */}
